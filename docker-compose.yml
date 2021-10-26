@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  fin_api_database:
+    image: postgres
+    container_name: fin_api_database
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=fin_api
+      # - POSTGRES_MULTIPLE_DATABASES=fin_api,fin_api_test
+    volumes:
+      - pgdata:/data/postgres
+      - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+
+  # app:
+  #   build: .
+  #   container_name: fin_api
+  #   restart: always
+  #   ports: 
+  #     - 3333:3333
+  #     - 9229:9229
+  #   volumes: 
+  #     - .:/usr/app
+  #   links: 
+  #     - fin_api_database
+  #   depends_on:
+  #     - fin_api_database
+
+
+volumes:
+  pgdata:
+    driver: local
