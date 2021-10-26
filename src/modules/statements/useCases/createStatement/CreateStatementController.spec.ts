@@ -140,7 +140,7 @@ describe("Create Statement Controller", () => {
   it("should not be able to create statement from nonexistent user", async () => {
     const authResponse = await request(app).post("/api/v1/sessions").send({
       email: "jose@gmail.com",
-      password: "13245",
+      password: "12345",
     });
 
     const { token, user } = authResponse.body;
