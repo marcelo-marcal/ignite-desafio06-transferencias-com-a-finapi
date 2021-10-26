@@ -52,7 +52,7 @@ describe("Authenticate User Controller", () => {
   it("should not be able to authenticate with incorrect password", async () => {
     const response = await request(app).post("/api/v1/sessions").send({
       email: "lorenzo@gmail.com",
-      password: "12345",
+      password: "12300",
     });
 
     expect(response.status).toBe(401);
