@@ -15,6 +15,15 @@ A nova funcionalidade permiti a transferência de valores entre contas.
 - Só possível transferir valores superiores ao disponível no saldo de uma conta;
 - O balance (obtido através da rota /api/v1/statements/balance) considera também todos os valores transferidos ou recebidos através de transferências ao exibir o saldo de um usuário;
 
+ 1 - ```docker-compose up -d```
+ 
+ 2 - ```yarn typeorm migration:run```
+ 
+ 3 - ```yarn test```
+ 
+
+
+
 <h1 align="center">
     <img src="./img/img001.png" />
 </h1>
